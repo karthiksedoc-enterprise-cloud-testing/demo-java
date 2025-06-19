@@ -1,0 +1,15 @@
+name: "Security CodeQL Config"
+disable-default-queries: true
+queries:
+  - uses: security-extended
+packs:
+  - codeql/java-queries
+query-filters:
+  - include:
+      id:
+        - java/missing-jwt-signature-check
+        - java/ldap-injection
+        - java/insecure-trustmanager
+paths-ignore:
+  - '**/test/**'
+  - '**/tests/**'
